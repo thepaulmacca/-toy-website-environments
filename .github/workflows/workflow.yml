@@ -23,8 +23,10 @@ jobs:
     with:
       environmentType: Test
       resourceGroupName: rg-toywebsite-test
+      reviewApiUrl: https://sandbox.contoso.com/reviews
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS_TEST }}
+      reviewApiKey: ${{ secrets.REVIEW_API_KEY_TEST }}
   
   # Deploy to the production environment.
   deploy-production:
@@ -33,5 +35,7 @@ jobs:
     with:
       environmentType: Production
       resourceGroupName: rg-toywebsite-prod
+      reviewApiUrl: https://api.contoso.com/reviews
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS_PRODUCTION }}
+      reviewApiKey: ${{ secrets.REVIEW_API_KEY_PRODUCTION }}
